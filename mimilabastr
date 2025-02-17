@@ -1,0 +1,22 @@
+#Задан текст, содержащий не более 1000 символов. Напечатать буквы, на которые начинаются слова в тексте, в порядке убывания частоты их употребления.
+
+t = "Ааааа Бооо Олллл Лх"
+f = {}
+for c in t:
+    if c.isalpha():
+        b = c.lower()
+        if b in f:
+            f[b] += 1
+        else:
+            f[b] = 1
+s = sorted(f.items(), key=lambda item: item[1], reverse=True)
+fl = {}
+for x in t.split():
+    if x:
+        b = x[0].lower()
+        if b in fl:
+            fl[b] = True
+        else:
+            fl[b] = True
+result = [x for x, z in s if x in fl]
+print(result)
