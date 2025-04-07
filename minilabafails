@@ -17,4 +17,7 @@ for i in range(0, len(a), 2):
 if ma != -1:
     a[ma] = ma
 
-print(a)
+f = open('лабаинфа.txt', 'w')  
+for num in a:
+    f.write(str(num) + '\n')
+f.close()
